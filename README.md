@@ -7,6 +7,7 @@ ITFactory
 ```sh
 git clone https://github.com/staffluck/factory.git
 nano .env ( по шаблону .env.template )
+python manage.py migrate
 python manage.py runserver 5000
 ```
 
