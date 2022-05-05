@@ -31,7 +31,7 @@ class VisitCreateAPIView(GenericAPIView):
 
         #  Я бы вывел это в сериализатор, используя MethodField - передавал tradepoint queryset с фильтром по полю phone
         if data["tradepoint"].employee.phone != phone:
-            raise ValidationError({"phone": "Телефон не связан с переданной торговой точкой"})
+            raise ValidationError({"phone": ["Телефон не связан с переданной торговой точкой", ]})
 
         visit = Visit.objects.create(
             tradepoint=data["tradepoint"],
